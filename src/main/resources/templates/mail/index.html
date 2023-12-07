@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .verification-code {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .instructions {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .button {
+            margin-top: 20px;
+        }
+
+        .button a {
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .button a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Email Verification</h1>
+    </div>
+    <div class="content">
+        <p class="verification-code">Your verification code is: <span th:text="${verificationCode}"></span></p>
+        <p class="instructions">Please use this code to verify your email address.</p>
+        <div class="button">
+            <a href="#" th:href="${verificationLink}">Verify Email</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
